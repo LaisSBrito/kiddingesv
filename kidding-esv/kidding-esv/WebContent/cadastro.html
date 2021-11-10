@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="login.css">
+<link rel="icon" href="imagens/favicon.ico">
+
+<title>Cadastro | KiddingEsv</title>
+
+</head>
+
+<body>
+
+	<div class="login-page">
+		<div class="form">
+			<div class="upform">
+				<img src="imagens/logotippp.png" alt=""
+					style="height: 100px; padding: 0%; margin: 0%;">
+			</div>
+			<form class="login-form" name="cadastro" action="">			
+				<input type="text" name="nome" placeholder="Nome" /> 
+				<input type="email" name="email" placeholder="Email" /> 
+				<input type="password" name="senha1" placeholder="Senha" />
+				<input type="password" name="senha2" placeholder="Repita a senha" />
+			</form>
+			<a href="login.html" onclick="validar()"><button >Criar</button></a>
+			<p class="message">
+				Já possui uma conta? <a href="login.html">Faça login</a>
+			</p>
+		</div>
+	</div>
+	<script src="scripts/validador.js"></script>
+</body>
+</html>
