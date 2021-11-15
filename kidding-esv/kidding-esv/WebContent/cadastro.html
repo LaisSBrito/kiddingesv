@@ -19,15 +19,21 @@
 				<img src="imagens/logotippp.png" alt=""
 					style="height: 100px; padding: 0%; margin: 0%;">
 			</div>
-			<form class="login-form" name="cadastro" action="">			
+			<div class="login-form">
+			<form name="cadastro" action="insert">			
 				<input type="text" name="nome" placeholder="Nome" /> 
 				<input type="email" name="email" placeholder="Email" /> 
-				<input type="password" name="senha1" placeholder="Senha" />
+				<input type="password" name="senha" placeholder="Senha" />
 				<input type="password" name="senha2" placeholder="Repita a senha" />
+			<button onclick="validar()">Criar</button>
 			</form>
-			<a href="login.html" onclick="validar()"><button >Criar</button></a>
+		
+			</div>
+			
+			<p class="message">Já possui uma conta? <a href="login.html">Faça login</a>
+			</p>
 			<p class="message">
-				Já possui uma conta? <a href="login.html">Faça login</a>
+				 Nossos <a href="termos.html">Termos</a>
 			</p>
 		</div>
 	</div>
