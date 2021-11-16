@@ -1,11 +1,10 @@
-
 <html lang="pt-br">
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" href="imagens/favicon.ico">
-        
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">        
         <title>Inglês | KiddingEsv</title>  
     </head>
 <body>
@@ -16,15 +15,22 @@
   
     </div>
     <div id="area-principal">
-        <div id="area-postagens">
-            <h6>Tente digitar uma palavra em Inglês para ver se memorizou.</h6>
-            <div class="input-group mb-3">
-                <input type="text" class="form-control" aria-label="teste" aria-describedby="button-addon2">
-                <div class="input-group-append">
-                  <button class="btn btn-outline-secondary" type="button" id="button-addon2">Enviar</button>
-                </div>
+        <div class="w3-row-padding w3-card-4 w3-light-grey" style="margin-top: 100px; margin-left: 100px; width: 50%;">
+
+            <h2>Hora da prática!</h2>
+            <p>Digite uma palavra e veja se memorizou bem.  </p>
+            <div class="w3-col m4 l3">
+                <p>
+                <input class="w3-input w3-border w3-round" id="inTitulo" name="last" type="text">
+                </p>
             </div>
-     	</div>
+            <div class="w3-col m4 l3">
+                <p>
+                    <button class="w3-button w3-ripple" id="btConverter">ENVIAR</button>
+                </p>
+            </div>
+                <p id="outTitulo"></p>
+          </div>
          <br>
          <br>
     </div>
@@ -49,7 +55,62 @@
 
 </body>
 </html>
+<script type="text/javascript">
 
+    function converterDuracao(){
+    //cria referência aos elementos da página
+    var inTitulo = document.getElementById("inTitulo");
+    var outTitulo = document.getElementById("outTitulo");
+
+    //obtém conteúdos dos campos de entrada
+    var titulo = inTitulo.value;
+    palavra1= "apple";
+    palavraApple= "Apple";
+    MacaC="APPLE";
+    palavra2 = "house";
+    palavraHouse ="House";
+    houseC= "HOUSE"
+    palavra3 = "hello";
+    palavra4 = "computer";
+    palavra5 = "bye";
+    palavra6 = "butterfly";
+    palavra7 = "eraser";
+    palavra8 = "friend";
+    palavra9 = "melon";
+    palavra10 = "welcome";
+
+    // verifica através do if e altera o conteúdo do paragrafo de resposta
+        if (titulo === palavra1 ||titulo === palavraApple || titulo === MacaC){
+        outTitulo.textContent = "Você acertou! Apple significa maçã.";
+        } else if (titulo === palavra2 ||titulo === palavraHouse||titulo === houseC) {
+        outTitulo.textContent = "Você acertou! House significa Casa.";
+        }else if (titulo == palavra3) {
+            outTitulo.textContent = "Você acertou! Hello significa Olá.";
+        }else if (titulo === palavra4) {
+            outTitulo.textContent = "Você acertou! Computer significa Computador.";
+        }else if (titulo === palavra5) {
+            outTitulo.textContent = "Você acertou! Bye significa Tchau.";
+        }else if (titulo === palavra6) {
+            outTitulo.textContent = "Você acertou! Butterfly significa Borboleta.";
+        }else if (titulo === palavra7) {
+            outTitulo.textContent = "Você acertou! Eraser significa Borracha.";
+        }else if (titulo === palavra8) {
+            outTitulo.textContent = "Você acertou! Friend significa Amigo(a).";
+        }else if (titulo === palavra9) {
+            outTitulo.textContent = "Você acertou! Melon significa Melão.";
+        }else if (titulo === palavra10) {
+            outTitulo.textContent = "Você acertou! Welcome significa Bem Vindo(a).";
+        }else{
+        outTitulo.textContent = "Você errou...Tente Novamente!";}
+
+    }
+
+    //cria uma referência ao elemento btConverter(botão)
+    var btConverter = document.getElementById("btConverter");
+    //registra um evento associado ao botão, para carregar uma função
+    btConverter.addEventListener("click", converterDuracao);
+
+</script>
 <style>
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 *{
