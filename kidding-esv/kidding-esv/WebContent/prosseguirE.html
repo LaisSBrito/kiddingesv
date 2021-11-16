@@ -22,14 +22,15 @@
 		<p>Digite uma palavra e veja se memorizou bem.</p>
 		<div class="w3-col m4 l3">
 			<p>
-				<input class="w3-input w3-border w3-round" name="last" type="text">
+				   <input class="w3-input w3-border w3-round" id="inTitulo" name="last" type="text">
 			</p>
 		</div>
 		<div class="w3-col m4 l3">
 			<p>
-				<button class="w3-button w3-ripple">Confirmar</button>
+				<button class="w3-button w3-ripple" id="btConverter">ENVIAR</button>
 			</p>
 		</div>
+		    <p id="outTitulo"></p>
 	</div>
 
 	<div class="progE">
@@ -42,6 +43,63 @@
 	</div>
 	
 	<br>
+	
+	<script type="text/javascript">
+
+    function converterDuracao(){
+    //cria referência aos elementos da página
+    var inTitulo = document.getElementById("inTitulo");
+    var outTitulo = document.getElementById("outTitulo");
+
+    //obtém conteúdos dos campos de entrada
+    var titulo = inTitulo.value;
+    palavra1= "hermosa";
+    palavraApple= "Hermosa";
+    MacaC="HERMOSA";
+    palavra2 = "gracias";
+    palavraHouse ="Gracias";
+    houseC= "GRACIAS"
+    palavra3 = "chico";
+    palavra4 = "chica";
+    palavra5 = "tener";
+    palavra6 = "salir";
+    palavra7 = "donde";
+    palavra8 = "usted";
+    palavra9 = "gustar";
+    palavra10 = "empezar";
+
+    // verifica através do if e altera o conteúdo do paragrafo de resposta
+        if (titulo === palavra1 ||titulo === palavraApple || titulo === MacaC){
+        outTitulo.textContent = "Você acertou! Hermosa significa Linda.";
+        } else if (titulo === palavra2 ||titulo === palavraHouse||titulo === houseC) {
+        outTitulo.textContent = "Você acertou! Gracias significa Obrigado.";
+        }else if (titulo == palavra3) {
+            outTitulo.textContent = "Você acertou! Chico significa significa Garoto.";
+        }else if (titulo === palavra4) {
+            outTitulo.textContent = "Você acertou! Chica significa Garota.";
+        }else if (titulo === palavra5) {
+            outTitulo.textContent = "Você acertou! Tener significa Ter.";
+        }else if (titulo === palavra6) {
+            outTitulo.textContent = "Você acertou! Salir significa sair.";
+        }else if (titulo === palavra7) {
+            outTitulo.textContent = "Você acertou! Donde significa Onde.";
+        }else if (titulo === palavra8) {
+            outTitulo.textContent = "Você acertou! Usted significa Você.";
+        }else if (titulo === palavra9) {
+            outTitulo.textContent = "Você acertou! Gustar significa Gostar.";
+        }else if (titulo === palavra10) {
+            outTitulo.textContent = "Você acertou! Empezar significa Começar";
+        }else{
+        outTitulo.textContent = "Você errou...Tente Novamente!";}
+
+    }
+
+    //cria uma referência ao elemento btConverter(botão)
+    var btConverter = document.getElementById("btConverter");
+    //registra um evento associado ao botão, para carregar uma função
+    btConverter.addEventListener("click", converterDuracao);
+
+</script>
 	
 	
 	
