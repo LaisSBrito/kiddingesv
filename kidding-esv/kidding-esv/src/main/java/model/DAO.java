@@ -45,7 +45,7 @@ public class DAO {
 
 	}**/
 	
- /**CRUD USUARIO CREATE**/
+ /** USUARIO CREATE**/
 	
 	public void inserirUsuario(UsuarioJB user) {
 		String criar = "insert into USUARIO (Usuario,Email,Senha) values (?,?,?)";
@@ -80,7 +80,7 @@ public class DAO {
 	
 	
 	
-	/** CRUD USUARIO LOGIN **/
+	/** USUARIO LOGIN **/
 	
 	public void logarUsuario(UsuarioJB user)  {
 		String logar = "select * from USUARIO where Email = ? and Senha = ?";
