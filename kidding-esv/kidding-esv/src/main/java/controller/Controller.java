@@ -6,8 +6,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-
 import model.DAO;
 import model.UsuarioJB;
 
@@ -29,7 +27,7 @@ public class Controller extends HttpServlet {
 		String action = request.getServletPath();
 		System.out.println(action);
 		if (action.equals("/home")) {
-			home(request, response);
+			doPost(request, response);	
 		} else if (action.equals("/insert")) {
 			novoUsuario(request, response);
 		} else {
@@ -73,7 +71,18 @@ public class Controller extends HttpServlet {
 			        
 			
 			dao.logarUsuario(user);
-			response.sendRedirect("home");
+			
+			
+			if (dao.logarUsuario(user)) {	         
+			response.sendRedirect("home.html");
+			
+			
+			} else {
+			response.sendRedirect("cadastro.html");
+			}
 			
 	}
+
+
 }
+
