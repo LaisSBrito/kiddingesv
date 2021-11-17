@@ -4,9 +4,10 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 
-import javax.swing.JOptionPane;
+
+
+
 
 
 public class DAO {
@@ -57,9 +58,18 @@ public class DAO {
 			pst.setString(2, user.getEmail());
 			pst.setString(3, user.getSenha());
 			//Execução da query
-			pst.executeUpdate();
+
+			int k = pst.executeUpdate();
+			if (k==1) {
+				System.out.println("Registrado com sucesso");
+			} else {
+				System.out.println("Tente novamente");
+				
+			}
+			
 			//encerrar a conexao
 			con.close();
+			
 			
 		} catch (Exception e) {
 			System.out.println(e);
@@ -72,28 +82,29 @@ public class DAO {
 	
 	/** CRUD USUARIO LOGIN **/
 	
-	public ResultSet logarUsuario(UsuarioJB user) {
-		Connection con = conectar();
-		
+	public void logarUsuario(UsuarioJB user)  {
+		String logar = "select * from USUARIO where Email = ? and Senha = ?";
+
 		try {
-			String logar = "select * from USUARIO where Email = ? and Senha = ?";
 		
+			Connection con = conectar();
 			PreparedStatement pst = con.prepareStatement(logar);
 			pst.setString(1, user.getEmail());
 			pst.setString(2, user.getSenha());
 			
-		
+			System.out.println(pst);
 			ResultSet rs = pst.executeQuery();
-			return rs;
+			if  (rs.next()) {
+				//vai pra home
+			} else {	
+				//encaminha pra tela de cadastro
+			}
 			
-		} catch (SQLException e) {
-			JOptionPane.showConfirmDialog(null,"dao: " + e);
-			return null;
+		} catch (Exception e) {
+			System.out.println(e);
+		
 		}
-		
-		
-
-	}
+		return ;
 	
-}
+  }
 }
