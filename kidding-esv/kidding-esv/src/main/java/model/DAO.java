@@ -56,7 +56,7 @@ public class DAO {
 			//substituir as (?)
 			pst.setString(1, user.getUsuario());
 			pst.setString(2, user.getEmail());
-			pst.setString(3, user.getSenha());
+			pst.setString(3, user.getSenha()); 
 			//Execução da query
 
 			int k = pst.executeUpdate();
@@ -64,7 +64,7 @@ public class DAO {
 				System.out.println("Registrado com sucesso");
 			} else {
 				System.out.println("Tente novamente");
-				
+				return ;
 			}
 			
 			//encerrar a conexao
@@ -77,12 +77,12 @@ public class DAO {
 		
 	}
 	
+		
 	
+	/** USUARIO LOGIN 
+	 * @return **/
 	
-	
-	/** USUARIO LOGIN **/
-	
-	public void logarUsuario(UsuarioJB user)  {
+	public boolean logarUsuario(UsuarioJB user)  {
 		String logar = "select * from USUARIO where Email = ? and Senha = ?";
 
 		try {
@@ -95,16 +95,20 @@ public class DAO {
 			System.out.println(pst);
 			ResultSet rs = pst.executeQuery();
 			if  (rs.next()) {
-				//vai pra home
+				System.out.println("Usuario logado");
+				
+				return true;
 			} else {	
-				//encaminha pra tela de cadastro
+				System.out.println("Usuario não existe");
+				
 			}
+			
+			con.close();
 			
 		} catch (Exception e) {
 			System.out.println(e);
 		
 		}
-		return ;
-	
+	return false;
   }
 }
